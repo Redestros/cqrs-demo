@@ -1,9 +1,9 @@
-﻿using cqrs_demo.Domain.Common;
+﻿using cqrs_demo.Data.Configuration;
+using cqrs_demo.Domain.Common;
 using cqrs_demo.Domain.Customers;
 using cqrs_demo.Domain.Stock;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Rammus.Data.Stock;
 using System;
 using System.IO;
 using System.Linq;
@@ -44,6 +44,8 @@ namespace cqrs_demo.Data
         {
             base.OnModelCreating(builder);
 
+            builder.ApplyConfiguration(new ClientEntityConfiguration());
+            builder.ApplyConfiguration(new ClientConfigEntityConfiguration());
             builder.ApplyConfiguration(new ProductEntityConfiguration());
             builder.ApplyConfiguration(new OrderEntityConfiguration());
             builder.ApplyConfiguration(new DeliveryEntityConfiguration());

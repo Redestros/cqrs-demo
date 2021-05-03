@@ -1,7 +1,7 @@
 ﻿using cqrs_demo.Domain.Stock;
 using Microsoft.EntityFrameworkCore;
 
-namespace Rammus.Data.Stock
+namespace cqrs_demo.Data.Configuration
 {
     public class OrderEntityConfiguration : IEntityTypeConfiguration<Order>
     {

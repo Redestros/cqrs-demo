@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Rammus.Data.Stock
+namespace cqrs_demo.Data.Configuration
 {
     public class DeliveryEntityConfiguration : IEntityTypeConfiguration<Delivery>
     {

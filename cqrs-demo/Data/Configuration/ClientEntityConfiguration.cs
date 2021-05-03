@@ -5,11 +5,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace cqrs_demo.Data.Configuration
 {
-    public class CustomerEntityConfiguration : IEntityTypeConfiguration<Client>
+    public class ClientEntityConfiguration : IEntityTypeConfiguration<Client>
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
             builder.HasKey(x => x.Id);
+
+            builder.HasIndex(x => x.Name).IsUnique();
+
+            builder.HasIndex(x => x.RegistrationNumber).IsUnique();
 
             builder.HasOne(x => x.Address)
                 .WithOne(y => y.Customer)
